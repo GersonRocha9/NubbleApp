@@ -65,4 +65,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any inquiries or questions, please contact [your-name](mailto:your-email@example.com).
+For any inquiries or questions, please contact [Gerson Rocha](mailto:gersonrocha9@gmail.com).
+
+## Course Information
+
+The NubbleApp project was completed as a part of [Coffstack](https://www.instagram.com/coffstack/) course.
