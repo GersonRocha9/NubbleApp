@@ -1,17 +1,22 @@
+import {ThemeProvider} from '@shopify/restyle';
 import React from 'react';
 import {SafeAreaView} from 'react-native';
+import {Box} from './src/components/Box/Box';
+import {Button} from './src/components/Button/Button';
 import {Text} from './src/components/Text/Text';
+import {theme} from './src/theme/theme';
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <Text variant="headingLarge">Heading Large</Text>
-      <Text variant="headingMedium" italic>
-        Heading Italic Medium
-      </Text>
-      <Text variant="paragraphLarge">Paragraph Large</Text>
-      <Text variant="paragraphSmall">Paragraph Small</Text>
-      <Text variant="paragraphCaption">Paragraph Caption</Text>
-    </SafeAreaView>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView>
+        <Box paddingHorizontal="s24">
+          <Text variant="headingMedium">Faça login para entrar</Text>
+
+          <Button title="Enviar" marginVertical="s12" onPress={() => {}} />
+          <Button title="Enviar" loading onPress={() => {}} />
+        </Box>
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
