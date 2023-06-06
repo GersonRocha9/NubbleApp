@@ -5,22 +5,13 @@ import {Text} from './src/components/Text/Text';
 export default function App() {
   return (
     <SafeAreaView>
-      <Text
-        preset="headingLarge"
-        style={{
-          fontFamily: 'Satoshi Italic',
-        }}>
-        Heading Large
+      <Text variant="headingLarge">Heading Large</Text>
+      <Text variant="headingMedium" italic>
+        Heading Italic Medium
       </Text>
-      <Text
-        preset="paragraphLarge"
-        style={{
-          fontFamily: 'Satoshi Bold',
-        }}>
-        Paragraph Large
-      </Text>
-      <Text preset="paragraphSmall">Paragraph Small</Text>
-      <Text preset="paragraphCaption">Paragraph Caption</Text>
+      <Text variant="paragraphLarge">Paragraph Large</Text>
+      <Text variant="paragraphSmall">Paragraph Small</Text>
+      <Text variant="paragraphCaption">Paragraph Caption</Text>
     </SafeAreaView>
   );
 }
