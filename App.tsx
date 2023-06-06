@@ -10,24 +10,25 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
-        <Box paddingHorizontal="s24">
+        <Box gap="s16" paddingHorizontal="s24">
           <Text preset="headingMedium" color="carrotSecondary">
             Faça login para entrar
           </Text>
 
-          <Button
-            title="Enviar"
-            marginVertical="s12"
-            onPress={() => {
-              console.log('oi');
-            }}
-          />
+          <Button title="Enviar" onPress={() => {}} />
+
+          <Button preset="outline" title="Criar conta" onPress={() => {}} />
+
+          <Button title="Enviar" loading onPress={() => {}} />
+
+          <Button title="Enviar" loading disabled onPress={() => {}} />
+
           <Button
             title="Enviar"
             loading
-            onPress={() => {
-              console.log('oi 2');
-            }}
+            preset="outline"
+            disabled
+            onPress={() => {}}
           />
         </Box>
       </SafeAreaView>
