@@ -17,6 +17,7 @@ import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
 import {Theme} from '../../theme/theme';
 
 export const Box = createBox<Theme>();
+export type BoxProps = React.ComponentProps<typeof Box>;
 
 export type TouchableOpacityBoxProps = BackgroundColorProps<Theme> &
   SpacingProps<Theme> &
