@@ -1,14 +1,14 @@
 import {ThemeColors} from '../../theme/theme';
 import {TouchableOpacityBoxProps} from '../Box/Box';
-import {ButtonPreset} from './Button';
+import {ButtonVariant} from './Button';
 
 interface ButtonUI {
   container: TouchableOpacityBoxProps;
   content: ThemeColors;
 }
 
-export const buttonPresets: Record<
-  ButtonPreset,
+export const ButtonVariants: Record<
+  ButtonVariant,
   {
     default: ButtonUI;
     disabled: ButtonUI;

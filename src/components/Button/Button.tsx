@@ -3,25 +3,27 @@ import {TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box';
 import React from 'react';
 import {ActivityIndicator} from '../ActivityIndicator/ActivityIndicator';
 import {Text} from '../Text/Text';
-import {buttonPresets} from './buttonPresets';
+import {ButtonVariants} from './buttonVariants';
 
-export type ButtonPreset = 'primary' | 'outline';
+export type ButtonVariant = 'primary' | 'outline';
 
 interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
   loading?: boolean;
-  preset?: ButtonPreset;
+  variant?: ButtonVariant;
   disabled?: boolean;
 }
 
 export function Button({
   title,
   loading,
-  preset = 'primary',
+  variant = 'primary',
   disabled,
   ...touchableOpacityBoxProps
 }: ButtonProps) {
-  const buttonPreset = buttonPresets[preset][disabled ? 'disabled' : 'default'];
+  const buttonVariant =
+    ButtonVariants[variant][disabled ? 'disabled' : 'default'];
+
   return (
     <TouchableOpacityBox
       disabled={disabled || loading}
@@ -30,12 +32,12 @@ export function Button({
       alignItems="center"
       justifyContent="center"
       borderRadius="s16"
-      {...buttonPreset.container}
+      {...buttonVariant.container}
       {...touchableOpacityBoxProps}>
       {loading ? (
-        <ActivityIndicator color={buttonPreset.content} />
+        <ActivityIndicator color={buttonVariant.content} />
       ) : (
-        <Text preset="paragraphMedium" bold color={buttonPreset.content}>
+        <Text preset="paragraphMedium" bold color={buttonVariant.content}>
           {title}
         </Text>
       )}

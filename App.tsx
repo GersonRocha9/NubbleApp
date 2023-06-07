@@ -15,20 +15,19 @@ export default function App() {
             Faça login para entrar
           </Text>
 
-          <Button title="Enviar" onPress={() => {}} />
+          <Button title="Primary" />
 
-          <Button preset="outline" title="Criar conta" onPress={() => {}} />
+          <Button variant="outline" title="Outline" />
 
-          <Button title="Enviar" loading onPress={() => {}} />
+          <Button title="Primary Loading" loading />
 
-          <Button title="Enviar" loading disabled onPress={() => {}} />
+          <Button title="Primary Loading Disabled" loading disabled />
 
           <Button
-            title="Enviar"
+            variant="outline"
+            title="Outline Loading Disabled"
             loading
-            preset="outline"
             disabled
-            onPress={() => {}}
           />
         </Box>
       </SafeAreaView>
