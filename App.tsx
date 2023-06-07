@@ -1,9 +1,10 @@
-import {ThemeProvider} from '@shopify/restyle';
-import React from 'react';
-import {SafeAreaView} from 'react-native';
 import {Box} from './src/components/Box/Box';
 import {Button} from './src/components/Button/Button';
+import {Icon} from './src/components/Icon/Icon';
+import React from 'react';
+import {SafeAreaView} from 'react-native';
 import {Text} from './src/components/Text/Text';
+import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme/theme';
 
 export default function App() {
@@ -21,6 +22,8 @@ export default function App() {
 
           <Button title="Primary Loading" loading />
 
+          <Button variant="outline" title="Outline Loading" loading />
+
           <Button title="Primary Loading Disabled" loading disabled />
 
           <Button
@@ -29,6 +32,14 @@ export default function App() {
             loading
             disabled
           />
+
+          <Box flexDirection="row" gap="s16">
+            <Icon name="eyeOn" color="carrotSecondary" />
+            <Icon name="eyeOff" />
+            <Icon name="trash" color="carrotSecondary" />
+            <Icon name="heart" />
+            <Icon name="heartFill" />
+          </Box>
         </Box>
       </SafeAreaView>
     </ThemeProvider>
