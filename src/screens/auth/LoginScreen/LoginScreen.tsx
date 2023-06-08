@@ -5,7 +5,9 @@ import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
 
-export function LoginScreen() {
+export function LoginScreen({navigation: {navigate}}) {
+  // const {navigate} = useNavigation();
+
   return (
     <Screen>
       <Text mb="s8" preset="headingLarge">
@@ -39,7 +41,11 @@ export function LoginScreen() {
 
       <Button title="Entrar" mb="s12" />
 
-      <Button title="Criar uma conta" variant="outline" />
+      <Button
+        title="Criar uma conta"
+        variant="outline"
+        onPress={() => navigate('SignUpScreen')}
+      />
     </Screen>
   );
 }

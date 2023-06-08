@@ -1,12 +1,13 @@
-import {KeyboardAvoidingView, Platform} from 'react-native';
 import React, {ReactNode} from 'react';
+import {KeyboardAvoidingView, Platform} from 'react-native';
+import {Box, TouchableOpacityBox} from '../Box/Box';
 import {ScrollViewContainer, ViewContainer} from './components/ScreenContainer';
 
-import {Box} from '../Box/Box';
-import {Icon} from '../Icon/Icon';
-import {Text} from '../Text/Text';
+import {useNavigation} from '@react-navigation/native';
 import {useAppSafeArea} from '../../hooks/useAppSafeArea';
 import {useAppTheme} from '../../hooks/useAppTheme';
+import {Icon} from '../Icon/Icon';
+import {Text} from '../Text/Text';
 
 interface ScreenProps {
   children: ReactNode;
@@ -21,6 +22,7 @@ export function Screen({
 }: ScreenProps) {
   const {top, bottom} = useAppSafeArea();
   const {colors} = useAppTheme();
+  const navigation = useNavigation();
 
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
 
@@ -40,12 +42,17 @@ export function Screen({
             paddingBottom: bottom,
           }}>
           {canGoBack && (
-            <Box flexDirection="row" gap="s8" alignItems="center" mb="s24">
+            <TouchableOpacityBox
+              flexDirection="row"
+              gap="s8"
+              alignItems="center"
+              mb="s24"
+              onPress={navigation.goBack}>
               <Icon name="arrowLeft" size={20} color="primary" />
               <Text preset="paragraphMedium" semiBold>
                 Voltar
               </Text>
-            </Box>
+            </TouchableOpacityBox>
           )}
           {children}
         </Box>

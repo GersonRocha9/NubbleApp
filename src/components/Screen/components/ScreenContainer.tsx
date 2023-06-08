@@ -10,6 +10,7 @@ export function ScrollViewContainer({children, backgroundColor}: Props) {
   return (
     <ScrollView
       keyboardShouldPersistTaps="handled"
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         backgroundColor,
         flex: 1,
