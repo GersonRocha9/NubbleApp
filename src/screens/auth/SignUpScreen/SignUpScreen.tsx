@@ -5,16 +5,32 @@ import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
 
-export function LoginScreen() {
+export function SignUpScreen() {
+  function handleSignUp() {
+    // TODO: implement
+  }
+
   return (
     <Screen>
-      <Text mb="s8" preset="headingLarge">
-        Olá
+      <Text preset="headingLarge" mb="s32">
+        Criar uma conta
       </Text>
 
-      <Text mb="s40" preset="paragraphLarge">
-        Digite seu e-mail e senha para entrar
-      </Text>
+      <TextInput
+        label="Seu username"
+        placeholder="@"
+        boxProps={{
+          mb: 's16',
+        }}
+      />
+
+      <TextInput
+        label="Nome completo"
+        placeholder="Digite seu nome completo"
+        boxProps={{
+          mb: 's16',
+        }}
+      />
 
       <TextInput
         label="E-mail"
@@ -32,17 +48,11 @@ export function LoginScreen() {
         secureTextEntry
         RightComponent={<Icon name="eyeOn" size={24} color="gray2" />}
         boxProps={{
-          mb: 's8',
+          mb: 's48',
         }}
       />
 
-      <Text preset="paragraphSmall" bold color="primary" mb="s48">
-        Esqueci minha senha
-      </Text>
-
-      <Button title="Entrar" mb="s12" />
-
-      <Button title="Criar uma conta" variant="outline" />
+      <Button onPress={handleSignUp} title="Criar minha conta" />
     </Screen>
   );
 }
