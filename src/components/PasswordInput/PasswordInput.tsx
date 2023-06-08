@@ -3,7 +3,7 @@ import {TextInput, TextInputProps} from '../TextInput/TextInput';
 
 import {Icon} from '../Icon/Icon';
 
-type PasswordInputProps = TextInputProps;
+type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>;
 
 export function PasswordInput(props: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState(true);
@@ -16,6 +16,7 @@ export function PasswordInput(props: PasswordInputProps) {
     <TextInput
       textContentType="password"
       secureTextEntry={showPassword}
+      {...props}
       RightComponent={
         <Icon
           name={showPassword ? 'eyeOn' : 'eyeOff'}
@@ -24,7 +25,6 @@ export function PasswordInput(props: PasswordInputProps) {
           onPress={toggleShowPassword}
         />
       }
-      {...props}
     />
   );
 }
