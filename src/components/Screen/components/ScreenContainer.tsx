@@ -9,8 +9,10 @@ interface Props {
 export function ScrollViewContainer({children, backgroundColor}: Props) {
   return (
     <ScrollView
+      keyboardShouldPersistTaps="handled"
       style={{
         backgroundColor,
+        flex: 1,
       }}>
       {children}
     </ScrollView>
@@ -20,8 +22,10 @@ export function ScrollViewContainer({children, backgroundColor}: Props) {
 export function ViewContainer({children, backgroundColor}: Props) {
   return (
     <View
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         backgroundColor,
+        flex: 1,
       }}>
       {children}
     </View>
