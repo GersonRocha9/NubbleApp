@@ -1,3 +1,5 @@
+import React from 'react';
+import {Pressable} from 'react-native';
 import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
 import {ArrowRightIcon} from '../../assets/icons/ArrowRightIcon';
 import {BellIcon} from '../../assets/icons/BellIcon';
@@ -22,12 +24,11 @@ import {MessageIcon} from '../../assets/icons/MessageIcon';
 import {NewPostIcon} from '../../assets/icons/NewPostIcon';
 import {ProfileFillIcon} from '../../assets/icons/ProfileFillIcon';
 import {ProfileIcon} from '../../assets/icons/ProfileIcon';
-import React from 'react';
 import {SearchIcon} from '../../assets/icons/SearchIcon';
 import {SettingsIcon} from '../../assets/icons/SettingsIcon';
-import {ThemeColors} from '../../theme/theme';
 import {TrashIcon} from '../../assets/icons/TrashIcon';
 import {useAppTheme} from '../../hooks/useAppTheme';
+import {ThemeColors} from '../../theme/theme';
 
 export interface IconBase {
   size?: number;
@@ -38,6 +39,7 @@ interface IconProps {
   name: IconName;
   color?: ThemeColors;
   size?: number;
+  onPress?: () => void;
 }
 
 const iconRegistry = {
@@ -77,9 +79,18 @@ export function Icon({
   name,
   color = 'backgroundContrast',
   size = 24,
+  onPress,
 }: IconProps) {
   const {colors} = useAppTheme();
   const IconComponent = iconRegistry[name];
+
+  if (onPress) {
+    return (
+      <Pressable onPress={onPress} hitSlop={10}>
+        <IconComponent color={colors[color]} size={size} />
+      </Pressable>
+    );
+  }
 
   return <IconComponent color={colors[color]} size={size} />;
 }
