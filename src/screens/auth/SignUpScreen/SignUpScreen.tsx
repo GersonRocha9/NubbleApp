@@ -56,9 +56,8 @@ export function SignUpScreen({navigation}: ScreenProps) {
               name: 'checkRound',
               color: 'success',
             },
-            title: 'Tudo certo!',
-            description:
-              'Agora você já pode aproveitar todos os recursos do app.',
+            title: 'Sua conta foi criada com sucesso!',
+            description: 'Agora é só fazer login na nossa plataforma',
           })
         }
         title="Criar minha conta"

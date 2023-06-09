@@ -8,7 +8,7 @@ import {Text} from '../../../components/Text/Text';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SuccessScreen'>;
 
-export function SuccessScreen({route}: ScreenProps) {
+export function SuccessScreen({route, navigation}: ScreenProps) {
   const {icon, title, description} = route.params;
 
   return (
@@ -23,7 +23,11 @@ export function SuccessScreen({route}: ScreenProps) {
         {description}
       </Text>
 
-      <Button title="Começar" mt="s40" />
+      <Button
+        title="Voltar ao início"
+        mt="s40"
+        onPress={() => navigation.navigate('LoginScreen')}
+      />
     </Screen>
   );
 }
