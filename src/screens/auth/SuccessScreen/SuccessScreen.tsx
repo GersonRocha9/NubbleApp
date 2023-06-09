@@ -26,7 +26,7 @@ export function SuccessScreen({route, navigation}: ScreenProps) {
       <Button
         title="Voltar ao início"
         mt="s40"
-        onPress={() => navigation.navigate('LoginScreen')}
+        onPress={() => navigation.goBack()}
       />
     </Screen>
   );

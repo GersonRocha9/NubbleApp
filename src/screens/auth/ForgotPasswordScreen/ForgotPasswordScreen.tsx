@@ -5,13 +5,29 @@ import {RootStackParamList} from '../../../routes/Routes';
 import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
 
 type ScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'ForgotPasswordScreen'
 >;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function ForgotPasswordScreen({navigation}: ScreenProps) {
+  const {reset} = useResetNavigationSuccess();
+
+  function handleSendEmailToRecoverPassword() {
+    reset({
+      icon: {
+        name: 'messageRound',
+        color: 'greenPrimary',
+      },
+      title: `Enviamos as instruções para seu ${'\n'}e-mail`,
+      description:
+        'Clique no link enviado no seu e-mail para recuperar sua senha',
+    });
+  }
+
   return (
     <Screen canGoBack>
       <Text preset="headingLarge" mb="s16">
@@ -33,17 +49,7 @@ export function ForgotPasswordScreen({navigation}: ScreenProps) {
 
       <Button
         title="Recuperar senha"
-        onPress={() =>
-          navigation.navigate('SuccessScreen', {
-            icon: {
-              name: 'messageRound',
-              color: 'greenPrimary',
-            },
-            title: `Enviamos as instruções para seu ${'\n'}e-mail`,
-            description:
-              'Clique no link enviado no seu e-mail para recuperar sua senha',
-          })
-        }
+        onPress={handleSendEmailToRecoverPassword}
       />
     </Screen>
   );

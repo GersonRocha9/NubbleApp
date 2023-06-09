@@ -6,10 +6,25 @@ import {RootStackParamList} from '../../../routes/Routes';
 import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function SignUpScreen({navigation}: ScreenProps) {
+  const {reset} = useResetNavigationSuccess();
+
+  function handleSignUp() {
+    reset({
+      icon: {
+        name: 'checkRound',
+        color: 'success',
+      },
+      title: 'Sua conta foi criada com sucesso!',
+      description: 'Agora é só fazer login na nossa plataforma',
+    });
+  }
+
   return (
     <Screen canGoBack scrollable>
       <Text preset="headingLarge" mb="s32">
@@ -49,19 +64,7 @@ export function SignUpScreen({navigation}: ScreenProps) {
         }}
       />
 
-      <Button
-        onPress={() =>
-          navigation.navigate('SuccessScreen', {
-            icon: {
-              name: 'checkRound',
-              color: 'success',
-            },
-            title: 'Sua conta foi criada com sucesso!',
-            description: 'Agora é só fazer login na nossa plataforma',
-          })
-        }
-        title="Criar minha conta"
-      />
+      <Button onPress={handleSignUp} title="Criar minha conta" />
     </Screen>
   );
 }
