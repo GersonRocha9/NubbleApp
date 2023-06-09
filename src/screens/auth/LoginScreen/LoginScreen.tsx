@@ -1,13 +1,15 @@
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {Button} from '../../../components/Button/Button';
 import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
 import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
+import {RootStackParamList} from '../../../routes/Routes';
 
-export function LoginScreen({navigation: {navigate}}) {
-  // const {navigate} = useNavigation();
+type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 
+export function LoginScreen({navigation}: ScreenProps) {
   return (
     <Screen>
       <Text mb="s8" preset="headingLarge">
@@ -44,7 +46,7 @@ export function LoginScreen({navigation: {navigate}}) {
       <Button
         title="Criar uma conta"
         variant="outline"
-        onPress={() => navigate('SignUpScreen')}
+        onPress={() => navigation.navigate('SignUpScreen')}
       />
     </Screen>
   );
