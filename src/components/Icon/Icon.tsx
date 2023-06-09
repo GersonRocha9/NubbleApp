@@ -1,5 +1,3 @@
-import React from 'react';
-import {Pressable} from 'react-native';
 import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
 import {ArrowRightIcon} from '../../assets/icons/ArrowRightIcon';
 import {BellIcon} from '../../assets/icons/BellIcon';
@@ -10,6 +8,7 @@ import {CameraIcon} from '../../assets/icons/CameraIcon';
 import {ChatIcon} from '../../assets/icons/ChatIcon';
 import {ChatOnIcon} from '../../assets/icons/ChatOnIcon';
 import {CheckIcon} from '../../assets/icons/CheckIcon';
+import {CheckRoundIcon} from '../../assets/icons/checkRoundIcon';
 import {ChevronRightIcon} from '../../assets/icons/ChevronRightIcon';
 import {CommentIcon} from '../../assets/icons/CommentIcon';
 import {EyeOffIcon} from '../../assets/icons/EyeOffIcon';
@@ -21,21 +20,25 @@ import {HeartIcon} from '../../assets/icons/HeartIcon';
 import {HomeFillIcon} from '../../assets/icons/HomeFillIcon';
 import {HomeIcon} from '../../assets/icons/HomeIcon';
 import {MessageIcon} from '../../assets/icons/MessageIcon';
+import {MessageRound} from '../../assets/icons/MessageRound';
+import {MessageRoundLight} from '../../assets/icons/MessageRoundLight';
 import {NewPostIcon} from '../../assets/icons/NewPostIcon';
+import {Pressable} from 'react-native';
 import {ProfileFillIcon} from '../../assets/icons/ProfileFillIcon';
 import {ProfileIcon} from '../../assets/icons/ProfileIcon';
+import React from 'react';
 import {SearchIcon} from '../../assets/icons/SearchIcon';
 import {SettingsIcon} from '../../assets/icons/SettingsIcon';
+import {ThemeColors} from '../../theme/theme';
 import {TrashIcon} from '../../assets/icons/TrashIcon';
 import {useAppTheme} from '../../hooks/useAppTheme';
-import {ThemeColors} from '../../theme/theme';
 
 export interface IconBase {
   size?: number;
   color?: string;
 }
 
-interface IconProps {
+export interface IconProps {
   name: IconName;
   color?: ThemeColors;
   size?: number;
@@ -53,6 +56,7 @@ const iconRegistry = {
   chat: ChatIcon,
   chatOn: ChatOnIcon,
   check: CheckIcon,
+  checkRound: CheckRoundIcon,
   comment: CommentIcon,
   chevronRight: ChevronRightIcon,
   eyeOn: EyeOnIcon,
@@ -64,6 +68,8 @@ const iconRegistry = {
   home: HomeIcon,
   homeFill: HomeFillIcon,
   message: MessageIcon,
+  messageRound: MessageRound,
+  messageRoundLight: MessageRoundLight,
   newPost: NewPostIcon,
   profile: ProfileIcon,
   profileFill: ProfileFillIcon,

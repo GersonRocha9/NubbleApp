@@ -1,20 +1,15 @@
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React from 'react';
 import {Button} from '../../../components/Button/Button';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
+import React from 'react';
+import {RootStackParamList} from '../../../routes/Routes';
 import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
-import {RootStackParamList} from '../../../routes/Routes';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
 
-export function SignUpScreen(props: ScreenProps) {
-  function handleSignUp() {
-    // TODO: implement
-    console.log(props);
-  }
-
+export function SignUpScreen({navigation}: ScreenProps) {
   return (
     <Screen canGoBack scrollable>
       <Text preset="headingLarge" mb="s32">
@@ -54,7 +49,20 @@ export function SignUpScreen(props: ScreenProps) {
         }}
       />
 
-      <Button onPress={handleSignUp} title="Criar minha conta" />
+      <Button
+        onPress={() =>
+          navigation.navigate('SuccessScreen', {
+            icon: {
+              name: 'checkRound',
+              color: 'success',
+            },
+            title: 'Tudo certo!',
+            description:
+              'Agora você já pode aproveitar todos os recursos do app.',
+          })
+        }
+        title="Criar minha conta"
+      />
     </Screen>
   );
 }
