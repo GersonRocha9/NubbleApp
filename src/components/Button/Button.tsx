@@ -1,9 +1,9 @@
-import {TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box';
+import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box';
 
 import React from 'react';
-import {ActivityIndicator} from '../ActivityIndicator/ActivityIndicator';
-import {Text} from '../Text/Text';
-import {ButtonVariants} from './buttonVariants';
+import { ActivityIndicator } from '../ActivityIndicator/ActivityIndicator';
+import { Text } from '../Text/Text';
+import { ButtonVariants } from './buttonVariants';
 
 export type ButtonVariant = 'primary' | 'outline';
 

@@ -1,11 +1,11 @@
-import {Button} from '../../../components/Button/Button';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
-import {RootStackParamList} from '../../../routes/Routes';
-import {Screen} from '../../../components/Screen/Screen';
-import {Text} from '../../../components/Text/Text';
-import {TextInput} from '../../../components/TextInput/TextInput';
-import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
+import { Button } from '../../../components/Button/Button';
+import { Screen } from '../../../components/Screen/Screen';
+import { Text } from '../../../components/Text/Text';
+import { TextInput } from '../../../components/TextInput/TextInput';
+import { useResetNavigationSuccess } from '../../../hooks/useResetNavigationSuccess';
+import { RootStackParamList } from '../../../routes/Routes';
 
 type ScreenProps = NativeStackScreenProps<
   RootStackParamList,
@@ -13,8 +13,8 @@ type ScreenProps = NativeStackScreenProps<
 >;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function ForgotPasswordScreen({navigation}: ScreenProps) {
-  const {reset} = useResetNavigationSuccess();
+export function ForgotPasswordScreen({ navigation }: ScreenProps) {
+  const { reset } = useResetNavigationSuccess();
 
   function handleSendEmailToRecoverPassword() {
     reset({

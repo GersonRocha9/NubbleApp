@@ -1,18 +1,18 @@
-import {Button} from '../../../components/Button/Button';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
-import {RootStackParamList} from '../../../routes/Routes';
-import {Screen} from '../../../components/Screen/Screen';
-import {Text} from '../../../components/Text/Text';
-import {TextInput} from '../../../components/TextInput/TextInput';
-import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
+import { Button } from '../../../components/Button/Button';
+import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
+import { Screen } from '../../../components/Screen/Screen';
+import { Text } from '../../../components/Text/Text';
+import { TextInput } from '../../../components/TextInput/TextInput';
+import { useResetNavigationSuccess } from '../../../hooks/useResetNavigationSuccess';
+import { RootStackParamList } from '../../../routes/Routes';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function SignUpScreen({navigation}: ScreenProps) {
-  const {reset} = useResetNavigationSuccess();
+export function SignUpScreen({ navigation }: ScreenProps) {
+  const { reset } = useResetNavigationSuccess();
 
   function handleSignUp() {
     reset({

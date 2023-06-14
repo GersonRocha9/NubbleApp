@@ -1,12 +1,12 @@
-import React, {ReactNode} from 'react';
-import {ScrollView, View} from 'react-native';
+import React, { ReactNode } from 'react';
+import { ScrollView, View } from 'react-native';
 
 interface Props {
   children: ReactNode;
   backgroundColor: string;
 }
 
-export function ScrollViewContainer({children, backgroundColor}: Props) {
+export function ScrollViewContainer({ children, backgroundColor }: Props) {
   return (
     <ScrollView
       keyboardShouldPersistTaps="handled"
@@ -20,7 +20,7 @@ export function ScrollViewContainer({children, backgroundColor}: Props) {
   );
 }
 
-export function ViewContainer({children, backgroundColor}: Props) {
+export function ViewContainer({ children, backgroundColor }: Props) {
   return (
     <View
       // eslint-disable-next-line react-native/no-inline-styles

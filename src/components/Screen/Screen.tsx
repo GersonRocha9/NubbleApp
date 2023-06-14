@@ -1,13 +1,16 @@
-import React, {ReactNode} from 'react';
-import {KeyboardAvoidingView, Platform} from 'react-native';
-import {Box, TouchableOpacityBox} from '../Box/Box';
-import {ScrollViewContainer, ViewContainer} from './components/ScreenContainer';
+import React, { ReactNode } from 'react';
+import { KeyboardAvoidingView, Platform } from 'react-native';
+import { Box, TouchableOpacityBox } from '../Box/Box';
+import {
+  ScrollViewContainer,
+  ViewContainer,
+} from './components/ScreenContainer';
 
-import {useNavigation} from '@react-navigation/native';
-import {useAppSafeArea} from '../../hooks/useAppSafeArea';
-import {useAppTheme} from '../../hooks/useAppTheme';
-import {Icon} from '../Icon/Icon';
-import {Text} from '../Text/Text';
+import { useNavigation } from '@react-navigation/native';
+import { useAppSafeArea } from '../../hooks/useAppSafeArea';
+import { useAppTheme } from '../../hooks/useAppTheme';
+import { Icon } from '../Icon/Icon';
+import { Text } from '../Text/Text';
 
 interface ScreenProps {
   children: ReactNode;
@@ -20,8 +23,8 @@ export function Screen({
   canGoBack = false,
   scrollable = false,
 }: ScreenProps) {
-  const {top, bottom} = useAppSafeArea();
-  const {colors} = useAppTheme();
+  const { top, bottom } = useAppSafeArea();
+  const { colors } = useAppTheme();
   const navigation = useNavigation();
 
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
